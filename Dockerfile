@@ -1,7 +1,6 @@
 FROM debian:testing
 MAINTAINER Cheewai Lai <clai@csir.co.za>
 ENV DEBIAN_FRONTEND noninteractive
-# curl vim-tiny 
 RUN \
  apt-get update && \
  apt-get install -y \
@@ -11,8 +10,9 @@ RUN \
   unzip \
   apache2 \
   libapache2-mod-php5 \
- cgi-mapserver && \
- a2enmod cgi && \
+  cgi-mapserver
+
+RUN a2enmod cgi && \
  echo '# http://trac.osgeo.org/openlayers/wiki/SphericalMercator' >>/usr/share/proj/epsg && \
  echo '<900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs' >>/usr/share/proj/epsg
 
