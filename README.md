@@ -2,6 +2,10 @@
 
 Use this repo to build a Docker image that serves mapserver CGI via Apache
 
+## 2016-07-29 update
+
+*Debian testing* does not provide libapache2-mod-php5, so created a *jessie* branch where it is available.
+
 ## Usage
 
 Firstly, save your [Mapfile(s)](http://mapserver.org/introduction.html#introduction-to-the-mapfile) and data files into a subdirectory, i.e. *maps*. This subdirectory will be mounted into the container as */opt/mapserver/*.
