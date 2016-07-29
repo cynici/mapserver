@@ -1,4 +1,4 @@
-FROM debian:testing
+FROM debian:jessie
 MAINTAINER Cheewai Lai <clai@csir.co.za>
 ENV DEBIAN_FRONTEND noninteractive
 RUN \
